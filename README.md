@@ -1,0 +1,23 @@
+# 창공전선 · Sky Frontline (판매용 에디션)
+
+브라우저에서 바로 하는 3D 공중전 게임 (three.js). 이 저장소는 **팔 수 있게 정리한 판매용 에디션**이에요.
+
+## 판매용 에디션에서 바뀐 점
+
+- **다른 게임에서 뽑아낸 3D 모델은 하나도 없어요.** 설명에 War Thunder · Ace Combat · Battlefield 2 모드 · Cold Waters · Return to Castle Wolfenstein · World of Warplanes · Rise of Flight 에서 가져왔다고 적혀 있거나 "Not my model"이라고 적힌 모델은 전부 뺐어요.
+- 깨끗한 모델이 예전에 있던 기체는 그 모델로 돌아갔어요 (F-15C, F/A-18C, F-4E, F-5E, A-10, Su-25, Su-34, 라팔, 타이푼, J-10, 미라주 2000, 2차대전 프로펠러기 등).
+- 깨끗한 모델이 아직 없는 기체는 격납고 목록에서 빠졌어요 (MiG-21, F-104, 토네이도, 해리어, 스핏파이어 등). 미션에서 그 기체가 나올 자리에는 비슷한 깨끗한 기체가 대신 나와요. 깨끗한 실사 모델을 찾는 대로 다시 넣을게요.
+- 헬기는 MH-60L 하나만 남았어요. 지상전 전차는 게임 자체 전차 모델로 나와요.
+- Tu-95는 원작자(helijah)의 원본 모델을 써요.
+- 로비 음악 보컬은 상업용으로 써도 되는 Kokoro-82M 목소리(Apache 2.0)로 다시 만들었어요.
+
+## 라이선스
+
+- 3D 모델: 전부 **CC BY 4.0** 또는 **CC0** (A-5 비질란테 하나만 Sketchfab Free Standard, 봉인 파일로 게임 안에서만 사용). 제작자·출처·바꾼 점은 [CREDITS.md](CREDITS.md)와 게임 엔딩 크레딧에 있어요.
+- 일부 모델(MirzaArrafi 제작 F-14, KF-21, KC-46 등)은 제작자가 Sketchfab에 "created with AI"로 표시한 모델이에요.
+- 서울 지형·건물: 공공누리(KOGL) · © OpenStreetMap 기여자 (ODbL).
+- three.js · PeerJS: MIT.
+
+## 실행
+
+`index.html`을 웹 서버로 열면 돼요 (GitHub Pages 그대로 동작).
