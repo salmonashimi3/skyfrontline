@@ -1,6 +1,6 @@
 # Credits / 크레딧
 
-창공전선(Sky Frontline)에 쓰인 외부 자료와 그 라이선스 목록이에요. 3D 모델은 전부 Sketchfab 제작자들의 작품이고, **A-5 비질란테 하나만 빼고** 전부 **CC BY 4.0** 또는 **CC0** 라이선스라 제작자 표기를 지키면 상업적으로도 쓸 수 있어요. A-5 비질란테는 **Sketchfab Free Standard** 라이선스라 아래 [라이선스 모델](#licensed-model-not-cc--라이선스-모델) 조건을 따라요. 게임 안 엔딩 크레딧에도 같은 목록이 나와요.
+프로젝트 에이스(Project Ace)에 쓰인 외부 자료와 그 라이선스 목록이에요. 3D 모델은 전부 Sketchfab 제작자들의 작품이고, **A-5 비질란테 하나만 빼고** 전부 **CC BY 4.0** 또는 **CC0** 라이선스라 제작자 표기를 지키면 상업적으로도 쓸 수 있어요. A-5 비질란테는 **Sketchfab Free Standard** 라이선스라 아래 [라이선스 모델](#licensed-model-not-cc--라이선스-모델) 조건을 따라요. 게임 안 엔딩 크레딧에도 같은 목록이 나와요.
 
 All 3D models are by their Sketchfab creators. All but one are used under **CC BY 4.0** (or **CC0 1.0**), which allow commercial use with attribution; the exception is the A-5 Vigilante, used under the **Sketchfab Free Standard** licence (see [Licensed model](#licensed-model-not-cc--라이선스-모델)). No endorsement by the creators is implied.
 
