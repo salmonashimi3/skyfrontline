@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="ko">
 <head>
-<script>/* PROJECT ACE · 언어: 첫 실행 때 언어를 고르고, 화면에 나오는 한국어 글자를 그 언어로 바꿔 보여줘요.
+<script>/* 언어 (판매용 · 대회판 공용): 첫 실행 때 언어를 고르고, 화면에 나오는 한국어 글자를 그 언어로 바꿔 보여줘요.
    i18n/keys.js = 한국어 원문 목록(숫자는 #, 바뀌는 말은 {}), i18n/<언어>.js = 같은 순서의 번역 ({0},{1}… = 원문의 #/{} 자리) */
 (function(){
  var LANGS=[['ko','한국어','Korean'],['en','English','English'],['ja','日本語','Japanese'],['zh','简体中文','Chinese (Simplified)'],['zh-Hant','繁體中文','Chinese (Traditional)'],
@@ -97,7 +97,8 @@
  function picker(onPick){var ov=document.createElement('div');ov.id='paLang';
   var nav=(navigator.language||'en').toLowerCase(),guess=nav.indexOf('zh')===0?(/tw|hk|hant/.test(nav)?'zh-Hant':'zh'):nav.split('-')[0];if(guess==='nb'||guess==='nn')guess='no';if(guess==='iw')guess='he';
   var L=LANGS.slice().sort(function(a,b){return(b[0]===guess)-(a[0]===guess)});
-  ov.innerHTML='<div class="box"><h1>PROJECT ACE<small>Select your language · 언어를 선택하세요</small></h1><div class="wait"></div><div class="grid">'+
+  var brand=((document.title||'').split(' · ').pop()||'PROJECT ACE').toUpperCase();
+  ov.innerHTML='<div class="box"><h1>'+brand.replace(/[<>&]/g,'')+'<small>Select your language · 언어를 선택하세요</small></h1><div class="wait"></div><div class="grid">'+
    L.map(function(x){return'<button data-l="'+x[0]+'"'+(x[0]===(lang||guess)?' class="on"':'')+'>'+x[1]+'<small>'+x[2]+'</small></button>'}).join('')+'</div></div>';
   (document.body||document.documentElement).appendChild(ov);
   ov.querySelectorAll('button').forEach(function(b){b.onclick=function(){var l=b.dataset.l;ov.querySelector('.wait').textContent='…';try{localStorage.setItem(KEY,l)}catch(e){}onPick(l,ov)}})}
@@ -9553,14 +9554,6 @@ const BOOT_LINES=['All systems online. Welcome back, pilot.','Avionics online. W
 addEventListener('pointerdown',lobbyMusic);addEventListener('keydown',lobbyMusic);
 $('btnMus').textContent=S.music===false?'소리 켜기':'소리 끄기';
 $('btnMus').onclick=()=>{S.music=S.music===false;save();$('btnMus').textContent=S.music===false?'소리 켜기':'소리 끄기';if(S.music===false){sfx.music(false);sfx.hum(0)}else{st.ambOn=false;lobbyMusic()}};requestAnimationFrame(frame);
-/*SALE2*/{   // 판매용 마무리: 헬기는 깨끗한 MH-60L 하나, 지상전 전차는 게임 자체 전차, 러시아 계열 1인칭 조종석은 MiG-21 조종석
- for(const k of Object.keys(HTYPES))if(k!=='mh60')delete HTYPES[k];
- for(const k of['huey','ah64','mi24v','ka52','ah1w','oh58d','lynx','ah129','tiger','z10'])Object.defineProperty(HTYPES,k,{value:HTYPES.mh60,enumerable:false,configurable:true,writable:true});
- for(const k of Object.keys(WAR_FILES))if(/^t_/.test(k)||k==='tankR'||k==='kiev')delete WAR_FILES[k];
- TANK_POOL[0].length=0;TANK_POOL[1].length=0;
- CK_FILES.rus='ck_sov.glb';for(const v of Object.values(CK_SCAN))if(v.kind==='rus')v.f='ck_sov.glb';
- CK_SCAN.su27={f:'ck_sov.glb',s:1,eye:[0,0,0],kind:'rus'};   // Su-27 first person: scanned cockpit at the pilot's eye
- }
 /*PA_UI*/{   // PROJECT ACE 격납고: 워썬더식 배치 — 위 출격 버튼(아래 모드 선택), 오른쪽 접는 패널, 아래 국가 탭 + 기체 카드, 맨 아래 기체 종류
  try{
  const H=$('hangar');H.classList.add('wt');
@@ -9683,6 +9676,14 @@ $('btnMus').onclick=()=>{S.music=S.music===false;save();$('btnMus').textContent=
  }catch(e){console.warn('PA UI',e)}
 }
 
+/*SALE2*/{   // 판매용 마무리: 헬기는 깨끗한 MH-60L 하나, 지상전 전차는 게임 자체 전차, 러시아 계열 1인칭 조종석은 MiG-21 조종석
+ for(const k of Object.keys(HTYPES))if(k!=='mh60')delete HTYPES[k];
+ for(const k of['huey','ah64','mi24v','ka52','ah1w','oh58d','lynx','ah129','tiger','z10'])Object.defineProperty(HTYPES,k,{value:HTYPES.mh60,enumerable:false,configurable:true,writable:true});
+ for(const k of Object.keys(WAR_FILES))if(/^t_/.test(k)||k==='tankR'||k==='kiev')delete WAR_FILES[k];
+ TANK_POOL[0].length=0;TANK_POOL[1].length=0;
+ CK_FILES.rus='ck_sov.glb';for(const v of Object.values(CK_SCAN))if(v.kind==='rus')v.f='ck_sov.glb';
+ CK_SCAN.su27={f:'ck_sov.glb',s:1,eye:[0,0,0],kind:'rus'};   // Su-27 first person: scanned cockpit at the pilot's eye
+ }
 window.__game={getModel,withLoading,NET,H,hModel:()=>hModel,st,S,units:()=>units,player:()=>player,update,THREE,aimDir,startMatch,startTutorial,toHangar,save,quality:()=>({GQ,auto:qAuto(),lvl:QA.cur,slow:+QA.slow.toFixed(2),qms:+QA.ms.toFixed(1),dyn:+DYN.s.toFixed(2),pr:+renderer.getPixelRatio().toFixed(2),sh:renderer.shadowMap.enabled,frameMs:+rafAvg.toFixed(1)})};
 </script>
 
