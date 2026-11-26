@@ -178,6 +178,6 @@ All 3D models are by their Sketchfab creators. All but one are used under **CC B
 | Terrain · sea textures | Babylon.js Assets · three.js example textures | CC BY 4.0 · MIT |
 | 3D engine | [three.js](https://threejs.org/) | MIT |
 | Multiplayer | [PeerJS](https://peerjs.com/) (`lib/peerjs.min.js`) | MIT |
-| Lobby music vocal shouts (original pt-BR lyrics) | Synthesized with [Kokoro-82M](https://huggingface.co/hexgrad/Kokoro-82M) TTS by hexgrad (voices pm_alex / pm_santa), pitched down and saturated | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) — commercial use allowed |
+| Hangar music 「출격 전야」 (Eve of the Sortie), also the end-credits music | An original orchestral march composed for this game; it is synthesized live in the browser with the Web Audio API (horns, trumpets, trombones, strings, choir, harp, timpani, snare, bass drum, cymbals) — no recordings or samples | Original work of this game |
 
-> The lobby music shouts used to be made with the MBROLA br3 voice, whose licence does not allow selling; they were re-made with Kokoro-82M (Apache 2.0), so no MBROLA audio is left in the game.
+> There is no music while flying (engine, radio and warning sounds only). The old phonk lobby song and its synthesized vocal shouts are no longer in the game.
